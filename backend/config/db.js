@@ -1,7 +1,7 @@
-const { Sequelize } = require('sequelize');
-const config = require('./config.json');
+const { Sequelize } = require("sequelize");
+const config = require("./config.json");
 
-const env = process.env.NODE_ENV || 'development';
+const env = process.env.NODE_ENV || "development";
 const dbConfig = config[env];
 
 const sequelize = new Sequelize(
@@ -11,7 +11,7 @@ const sequelize = new Sequelize(
   {
     host: dbConfig.host,
     dialect: dbConfig.dialect,
-    logging: false // Set to console.log to see SQL queries
+    logging: true, // Set to console.log to see SQL queries
   }
 );
 
